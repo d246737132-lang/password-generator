@@ -1,5 +1,3 @@
-node_modules
-dist
+# 忽略的文件
 .DS_Store
-*.log
-.env
+Thumbs.db
