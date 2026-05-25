@@ -1,12 +1,12 @@
 import { useState } from 'react'
-import { Shield, ListTodo, Sparkles } from 'lucide-react'
+import { Shield, Calculator, Sparkles } from 'lucide-react'
 import PasswordGenerator from './components/PasswordGenerator'
-import TodoList from './components/TodoList'
+import CalculatorComponent from './components/Calculator'
 import Toast from './components/Toast'
 
 const tools = [
   { id: 'password', name: '密码生成器', icon: Shield },
-  { id: 'todo', name: '待办清单', icon: ListTodo },
+  { id: 'calculator', name: '简易计算器', icon: Calculator },
 ]
 
 function App() {
@@ -25,8 +25,8 @@ function App() {
     switch (activeTool) {
       case 'password':
         return <PasswordGenerator onToast={addToast} />
-      case 'todo':
-        return <TodoList onToast={addToast} />
+      case 'calculator':
+        return <CalculatorComponent onToast={addToast} />
       default:
         return <PasswordGenerator onToast={addToast} />
     }
@@ -34,11 +34,11 @@ function App() {
 
   return (
     <div className="min-h-screen">
-      <header className="bg-secondary/80 backdrop-blur-lg border-b border-border-color sticky top-0 z-50">
+      <header className="bg-secondary-80 backdrop-blur-lg border-b border-border-color sticky top-0 z-50">
         <div className="max-w-6xl mx-auto px-4 py-4">
           <div className="flex items-center justify-between">
             <div className="flex items-center gap-3">
-              <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-primary to-primary-light flex items-center justify-center shadow-lg shadow-primary/25">
+              <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-primary to-primary-light flex items-center justify-center shadow-lg shadow-primary-25">
                 <Sparkles className="w-6 h-6 text-white" />
               </div>
               <div>
@@ -50,7 +50,7 @@ function App() {
         </div>
       </header>
 
-      <nav className="bg-secondary/50 backdrop-blur-sm border-b border-border-color">
+      <nav className="bg-secondary-50 backdrop-blur-sm border-b border-border-color">
         <div className="max-w-6xl mx-auto px-4">
           <div className="flex gap-2 py-2">
             {tools.map((tool) => {
